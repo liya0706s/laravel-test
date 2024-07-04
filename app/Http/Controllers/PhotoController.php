@@ -39,7 +39,7 @@ class PhotoController extends Controller
         // 驗證請求數據
         $validateData = $request->validate([
             'title' => 'required|string|max:255',
-            'discription' => 'nullable|string',
+            'description' => 'nullable|string',
             'image' => 'required|image|max:2048', // 假設要上傳圖片並限制大小為2MB
         ]);
 

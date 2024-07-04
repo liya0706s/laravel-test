@@ -8,19 +8,19 @@
 <body>
     <h1>編輯照片</h1>
 
-    <form action="">
+    <form action="{{ route('photos.update',$photo->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <label for=""></label>
-        <input type="text">
+        <label for="title">標題:</label>
+        <input type="text" name="title" value="{{ $photo->title }}" required>
         
-        <label for=""></label>
-        <textarea name="" id=""></textarea>
+        <label for="description">敘述:</label>
+        <textarea name="description" id="description"> {{ $photo->description }} </textarea>
         
-        <label for=""></label>
-        <input type="text">
+        <label for="image">圖片:</label>
+        <input type="file" name="image" id="image">
         
-        <button></button>
+        <button type="submit">更新</button>
     </form>
 </body>
 </html>
